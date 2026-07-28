@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shaddow | Copy Specialist</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Work+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Work+Sans:wght@700;900&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      --bg-color: #dcd7cd;
-      --text-dark: #1b1928;
-      --card-bg: #ece8e1;
-      --border-dark: #1b1928;
+      --bg-color: #dcd7ce;
+      --text-dark: #1c1a27;
+      --box-bg: #eae6dd;
+      --border-dark: #1c1a27;
     }
 
     * {
@@ -26,158 +26,138 @@
       background-color: var(--bg-color);
       color: var(--text-dark);
       font-family: 'Space Mono', monospace;
-      line-height: 1.5;
+      line-height: 1.4;
       overflow-x: hidden;
     }
 
-    section {
-      width: 100%;
-      max-width: 1000px;
+    .page-container {
+      max-width: 900px;
       margin: 0 auto;
-      padding: 4rem 2rem;
-      min-height: 80vh;
+      padding: 2rem 1.5rem;
       display: flex;
-      align-items: center;
+      flex-direction: column;
+      gap: 4rem;
+    }
+
+    section {
       position: relative;
+      width: 100%;
     }
 
-    /* --- COMMON STYLES --- */
-    .badge {
-      background-color: var(--card-bg);
-      border: 2px solid var(--border-dark);
-      padding: 0.4rem 1.2rem;
-      font-weight: 700;
-      display: inline-block;
-      box-shadow: 2px 2px 0px rgba(0,0,0,0.1);
-    }
-
+    /* --- BADGES / STICKERS --- */
     .sticker {
-      background-color: var(--card-bg);
+      background-color: var(--box-bg);
       border: 2px solid var(--border-dark);
-      padding: 0.6rem 1.5rem;
+      padding: 0.5rem 1.5rem;
       font-family: 'Work Sans', sans-serif;
       font-weight: 900;
-      font-size: 2rem;
       text-transform: uppercase;
       letter-spacing: 1px;
       position: absolute;
       z-index: 10;
-      box-shadow: 3px 3px 0px rgba(0,0,0,0.15);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 2px 2px 0px var(--border-dark);
+      white-space: nowrap;
     }
 
-    /* --- SECTION 1: HERO --- */
-    #hero {
-      justify-content: space-between;
-    }
-
-    .hero-title-top {
-      position: absolute;
-      top: 3rem;
-      left: 2rem;
-      font-size: 0.9rem;
-      font-weight: 700;
-      line-height: 1.2;
-    }
-
-    .hero-title-top span {
-      text-decoration: underline;
-    }
-
-    .hero-image-container {
-      position: relative;
-      margin-left: auto;
-      margin-right: 5rem;
-      width: 320px;
-      height: 400px;
-    }
-
-    .hero-avatar {
+    /* Image Container Base */
+    .img-box {
       width: 100%;
-      height: 100%;
-      background-color: #383838;
-      border-radius: 4px;
+      background-color: #bebaaf;
+      border: 1px solid var(--border-dark);
       display: flex;
+      align-items: center;
       justify-content: center;
-      align-items: flex-end;
       overflow: hidden;
       position: relative;
     }
 
-    /* Doodle Art Representation */
-    .doodle-body {
-      width: 200px;
-      height: 240px;
-      background: #b0b0b0;
-      border-radius: 100px 100px 0 0;
-      position: relative;
-    }
-    
-    .doodle-head {
-      width: 180px;
-      height: 180px;
-      background: #e8e8e8;
-      border-radius: 50%;
-      position: absolute;
-      top: -90px;
-      left: 10px;
-      border: 3px solid #1b1928;
+    .img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
-    .doodle-face {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100%;
+    .placeholder-text {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #555;
       text-align: center;
+      padding: 1rem;
+    }
+
+    /* --- SECTION 1: HERO --- */
+    #hero {
+      min-height: 450px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-title-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 0.85rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-title-top u {
+      text-underline-offset: 3px;
+    }
+
+    .hero-img-wrapper {
+      position: relative;
+      width: 320px;
+      height: 400px;
+      margin-top: 2rem;
     }
 
     .sticker-shaddow {
-      top: 20%;
-      left: -120px;
-      transform: rotate(-12deg);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      top: 18%;
+      left: -110px;
+      transform: rotate(-10deg);
+      font-size: 1.8rem;
     }
 
     .sticker-kabir {
-      bottom: 10%;
-      right: -50px;
-      transform: rotate(8deg);
+      bottom: 12%;
+      right: -60px;
+      transform: rotate(7deg);
       font-size: 1.8rem;
     }
 
     /* --- SECTION 2: MY WORK --- */
     #work {
       display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 3rem;
+      grid-template-columns: 320px 1fr;
+      gap: 2.5rem;
       align-items: center;
     }
 
     .work-img-wrapper {
       position: relative;
-    }
-
-    .work-img {
       width: 100%;
-      border-radius: 4px;
-      filter: grayscale(100%);
-      display: block;
+      height: 420px;
     }
 
     .sticker-work {
       top: 15%;
-      right: -20px;
+      left: 30%;
       transform: rotate(-6deg);
+      font-size: 1.8rem;
     }
 
-    .work-content p.bio {
-      font-weight: 700;
+    .bio {
       font-size: 1.05rem;
-      margin-bottom: 2.5rem;
-      line-height: 1.6;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      line-height: 1.5;
     }
 
     .projects-grid {
@@ -187,166 +167,165 @@
     }
 
     .project-card h3 {
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       text-transform: uppercase;
-      margin-bottom: 0.5rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
       display: flex;
+      gap: 0.5rem;
       align-items: flex-start;
-      gap: 0.4rem;
     }
 
     .project-card p {
-      font-size: 0.8rem;
-      color: #4a4a4a;
+      font-size: 0.75rem;
+      color: #333;
+      line-height: 1.4;
     }
 
     .asterisk {
-      font-size: 1.5rem;
-      line-height: 1;
+      font-size: 1.8rem;
+      line-height: 0.8;
     }
 
     /* --- SECTION 3: SERVICES --- */
     #services {
+      display: flex;
       flex-direction: column;
-      justify-content: center;
+      align-items: center;
+      padding: 1rem 0;
     }
 
     .services-header {
       border: 2px solid var(--border-dark);
-      padding: 1rem 3rem;
-      font-size: 2.2rem;
+      padding: 0.8rem 2.5rem;
+      font-size: 2rem;
       font-weight: 700;
-      text-transform: uppercase;
-      margin-bottom: 4rem;
+      font-family: 'Space Mono', monospace;
       letter-spacing: 2px;
+      margin-bottom: 3.5rem;
       background-color: transparent;
     }
 
     .services-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 3rem 4rem;
+      gap: 3rem 2rem;
       width: 100%;
     }
 
     .service-item {
       display: flex;
       align-items: flex-start;
-      gap: 1.5rem;
+      gap: 1.2rem;
     }
 
     .service-icon {
-      width: 60px;
-      height: 60px;
+      width: 55px;
+      height: 55px;
       flex-shrink: 0;
+      stroke: var(--text-dark);
     }
 
     .service-info h3 {
-      font-size: 1.1rem;
+      font-size: 1rem;
+      font-weight: 700;
       text-transform: uppercase;
       text-decoration: underline;
+      text-underline-offset: 3px;
       margin-bottom: 0.3rem;
-      font-weight: 700;
     }
 
     .service-info p {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
+      color: #333;
     }
 
     /* --- SECTION 4: CONNECT --- */
     #connect {
       display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 3rem;
+      grid-template-columns: 280px 1fr;
+      gap: 2.5rem;
       align-items: center;
-      position: relative;
+      padding-bottom: 4rem;
     }
 
-    .connect-img {
+    .connect-img-wrapper {
+      position: relative;
       width: 100%;
-      max-height: 450px;
-      object-fit: cover;
-      filter: grayscale(100%);
-      border-radius: 4px;
+      height: 380px;
     }
 
     .connect-details {
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
+      font-size: 0.95rem;
       font-weight: 700;
-      font-size: 1rem;
+      letter-spacing: 0.5px;
     }
 
     .sticker-connect {
-      bottom: 2rem;
-      right: 10%;
+      bottom: -10px;
+      left: 140px;
       transform: rotate(-4deg);
-      font-size: 2.2rem;
+      font-size: 2rem;
       padding: 0.8rem 2rem;
     }
 
     /* --- MOBILE RESPONSIVE STYLES --- */
     @media (max-width: 768px) {
-      section {
-        padding: 3rem 1.5rem;
-        min-height: auto;
+      .page-container {
+        gap: 3rem;
+        padding: 1.5rem 1rem;
       }
 
-      /* Hero Mobile */
-      #hero {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
+      /* Hero */
       .hero-title-top {
         position: relative;
-        top: 0;
-        left: 0;
-        margin-bottom: 3rem;
-        text-align: left;
-        width: 100%;
+        margin-bottom: 1.5rem;
       }
 
-      .hero-image-container {
-        margin: 0 auto;
-        width: 260px;
-        height: 330px;
+      .hero-img-wrapper {
+        width: 240px;
+        height: 300px;
       }
 
       .sticker-shaddow {
-        left: -40px;
+        left: -35px;
         top: 10%;
-        font-size: 1.4rem;
-      }
-
-      .sticker-kabir {
-        right: -20px;
-        bottom: 5%;
         font-size: 1.3rem;
       }
 
-      /* Work Mobile */
+      .sticker-kabir {
+        right: -25px;
+        bottom: 5%;
+        font-size: 1.2rem;
+      }
+
+      /* Work */
       #work {
         grid-template-columns: 1fr;
-        gap: 2.5rem;
+      }
+
+      .work-img-wrapper {
+        height: 320px;
       }
 
       .sticker-work {
-        right: 10px;
-        top: -20px;
+        left: 10%;
+        top: 10%;
+        font-size: 1.4rem;
       }
 
       .projects-grid {
         grid-template-columns: 1fr;
       }
 
-      /* Services Mobile */
+      /* Services */
       .services-header {
-        font-size: 1.4rem;
-        padding: 0.8rem 1.5rem;
-        width: 100%;
+        font-size: 1.3rem;
+        padding: 0.6rem 1.2rem;
+        margin-bottom: 2rem;
         text-align: center;
       }
 
@@ -355,136 +334,153 @@
         gap: 2rem;
       }
 
-      /* Connect Mobile */
+      /* Connect */
       #connect {
         grid-template-columns: 1fr;
-        padding-bottom: 6rem;
+        padding-bottom: 5rem;
+      }
+
+      .connect-img-wrapper {
+        height: 320px;
       }
 
       .sticker-connect {
         left: 50%;
         transform: translateX(-50%) rotate(-3deg);
-        width: 90%;
-        text-align: center;
-        bottom: 1rem;
+        font-size: 1.4rem;
+        width: 85%;
+        justify-content: center;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- SECTION 1: HERO -->
-  <section id="hero">
-    <div class="hero-title-top">
-      SHADDOW <span>COPY<br>SPECIALIST</span>
-    </div>
+  <div class="page-container">
 
-    <div class="hero-image-container">
-      <div class="sticker sticker-shaddow">
-        <span>🙂</span> SHADDOW
+    <!-- SECTION 1: HERO -->
+    <section id="hero">
+      <div class="hero-title-top">
+        SHADDOW <u>COPY</u><br><u>SPECIALIST</u>
       </div>
-      
-      <div class="hero-avatar">
-        <div class="doodle-body">
-          <div class="doodle-head">
-            <div class="doodle-face">
-              <span style="font-size: 2rem; font-weight: bold;">• 😛 •</span>
-            </div>
+
+      <div class="hero-img-wrapper">
+        <div class="sticker sticker-shaddow">
+          <span>🙂</span> SHADDOW
+        </div>
+
+        <!-- REPLACE WITH YOUR IMAGE LINK -->
+        <div class="img-box" style="height: 100%;">
+          <!-- <img src="your-hero-image.jpg" alt="Hero Image"> -->
+          <div class="placeholder-text">[ MAIN AVATAR / CHARACTER IMAGE ]</div>
+        </div>
+
+        <div class="sticker sticker-kabir">
+          KABIR
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: MY WORK -->
+    <section id="work">
+      <div class="work-img-wrapper">
+        <div class="sticker sticker-work">
+          MY WORK 🙂
+        </div>
+
+        <!-- REPLACE WITH YOUR IMAGE LINK -->
+        <div class="img-box" style="height: 100%;">
+          <!-- <img src="your-keyboard-image.jpg" alt="Work Setup"> -->
+          <div class="placeholder-text">[ KEYBOARD / WORKSPACE IMAGE ]</div>
+        </div>
+      </div>
+
+      <div class="work-content">
+        <p class="bio">
+          Zukiswa Phiri is a freelance copywriter with over 4 years of experience specialising in copywriting and content strategy for different Mzansi brands and organizations.
+        </p>
+
+        <div class="projects-grid">
+          <div class="project-card">
+            <h3><span class="asterisk">✳</span> PLACE THE TITLE OF YOUR PROJECT HERE</h3>
+            <p>Add here any awards or things you want to highlight. Could also be a brief summary about the project you worked on.</p>
+          </div>
+
+          <div class="project-card">
+            <h3><span class="asterisk">✳</span> ZINE PUBLISHING SEPTEMBER 2025</h3>
+            <p>Creative Excellence (CE) Awards 2025<br><br>2025 CE Awardee Best Copywriting Advertising, Media, and PR</p>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="sticker sticker-kabir">
-        KABIR
+    <!-- SECTION 3: SERVICES -->
+    <section id="services">
+      <div class="services-header">
+        SERVICES I OFFER
       </div>
-    </div>
-  </section>
 
-  <!-- SECTION 2: MY WORK -->
-  <section id="work">
-    <div class="work-img-wrapper">
-      <div class="sticker sticker-work">
-        MY WORK 🙂
-      </div>
-      <!-- Placeholder image matching mechanical keyboard photo -->
-      <img class="work-img" src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=800&q=80" alt="Keyboard setup">
-    </div>
-
-    <div class="work-content">
-      <p class="bio">
-        Zukiswa Phiri is a freelance copywriter with over 4 years of experience specialising in copywriting and content strategy for different Mzansi brands and organizations.
-      </p>
-
-      <div class="projects-grid">
-        <div class="project-card">
-          <h3><span class="asterisk">✳</span> PLACE THE TITLE OF YOUR PROJECT HERE</h3>
-          <p>Add here any awards or things you want to highlight. Could also be a brief summary about the project you worked on.</p>
+      <div class="services-grid">
+        <div class="service-item">
+          <!-- Laptop Icon -->
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="20" x2="22" y2="20"></line></svg>
+          <div class="service-info">
+            <h3>FEATURE ARTICLES</h3>
+            <p>whether for print or digital content</p>
+          </div>
         </div>
 
-        <div class="project-card">
-          <h3><span class="asterisk">✳</span> ZINE PUBLISHING SEPTEMBER 2025</h3>
-          <p>Creative Excellence (CE) Awards 2025<br><br>2025 CE Awardee Best Copywriting Advertising, Media, and PR</p>
+        <div class="service-item">
+          <!-- Chat Icon -->
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><circle cx="9" cy="10" r="1"></circle><circle cx="12" cy="10" r="1"></circle><circle cx="15" cy="10" r="1"></circle></svg>
+          <div class="service-info">
+            <h3>MEDIA WRITING</h3>
+            <p>for advertisements or scripts</p>
+          </div>
+        </div>
+
+        <div class="service-item">
+          <!-- Pencil Icon -->
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
+          <div class="service-info">
+            <h3>SEO CONTENT</h3>
+            <p>targeted to improve search traffic in South Africa</p>
+          </div>
+        </div>
+
+        <div class="service-item">
+          <!-- Window Icon -->
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+          <div class="service-info">
+            <h3>WEB CONTENT</h3>
+            <p>websites, emails, and social media</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SECTION 3: SERVICES -->
-  <section id="services">
-    <div class="services-header">
-      SERVICES I OFFER
-    </div>
-
-    <div class="services-grid">
-      <div class="service-item">
-        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-        <div class="service-info">
-          <h3>FEATURE ARTICLES</h3>
-          <p>whether for print or digital content</p>
-        </div>
-      </div>
-
-      <div class="service-item">
-        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-        <div class="service-info">
-          <h3>MEDIA WRITING</h3>
-          <p>for advertisements or scripts</p>
+    <!-- SECTION 4: CONNECT -->
+    <section id="connect">
+      <div class="connect-img-wrapper">
+        <!-- REPLACE WITH YOUR IMAGE LINK -->
+        <div class="img-box" style="height: 100%;">
+          <!-- <img src="your-anime-image.jpg" alt="Connect Image"> -->
+          <div class="placeholder-text">[ ANIME / PORTRAIT IMAGE ]</div>
         </div>
       </div>
 
-      <div class="service-item">
-        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path></svg>
-        <div class="service-info">
-          <h3>SEO CONTENT</h3>
-          <p>targeted to improve search traffic in South Africa</p>
-        </div>
+      <div class="connect-details">
+        <p>ITSKABIRJUNEJA@GMAIL.COM</p>
+        <p>DISCORD - KABIRJUNEJA</p>
+        <p>90620XXXXX (NOT CURRENTLY AVAILABLE)</p>
       </div>
 
-      <div class="service-item">
-        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line></svg>
-        <div class="service-info">
-          <h3>WEB CONTENT</h3>
-          <p>websites, emails, and social media</p>
-        </div>
+      <div class="sticker sticker-connect">
+        CONNECT WITH ME
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SECTION 4: CONNECT -->
-  <section id="connect">
-    <img class="connect-img" src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=800&q=80" alt="Anime character photo">
-
-    <div class="connect-details">
-      <p>ITSKABIRJUNEJA@GMAIL.COM</p>
-      <p>DISCORD - KABIRJUNEJA</p>
-      <p>90620XXXXX (NOT CURRENTLY AVAILABLE)</p>
-    </div>
-
-    <div class="sticker sticker-connect">
-      CONNECT WITH ME
-    </div>
-  </section>
+  </div>
 
 </body>
 </html>
-
