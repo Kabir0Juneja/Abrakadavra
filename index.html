@@ -77,7 +77,9 @@
     .img-box img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: cover; /* Crops image to fill container without distortion */
+      object-position: center; /* Keeps focal point centered */
+      filter: grayscale(100%); /* Makes the image grayscale / colorless */
       display: block;
     }
 
@@ -369,10 +371,8 @@
           <span>🙂</span> SHADDOW
         </div>
 
-        <!-- REPLACE WITH YOUR IMAGE LINK -->
         <div class="img-box" style="height: 100%;">
-          <!-- <img src="images/image1.jpg" alt="Hero Image"> -->
-          <div class="placeholder-text">[ MAIN AVATAR / CHARACTER IMAGE ]</div>
+          <img src="images/image1.jpg" alt="Hero Image">
         </div>
 
         <div class="sticker sticker-kabir">
@@ -388,9 +388,8 @@
           MY WORK 🙂
         </div>
 
-        <!-- REPLACE WITH YOUR IMAGE LINK -->
         <div class="img-box" style="height: 100%;">
-          <!-- <img src="your-keyboard-image.jpg" alt="Work Setup"> -->
+          <!-- <img src="images/your-keyboard-image.jpg" alt="Work Setup"> -->
           <div class="placeholder-text">[ KEYBOARD / WORKSPACE IMAGE ]</div>
         </div>
       </div>
@@ -462,9 +461,8 @@
     <!-- SECTION 4: CONNECT -->
     <section id="connect">
       <div class="connect-img-wrapper">
-        <!-- REPLACE WITH YOUR IMAGE LINK -->
         <div class="img-box" style="height: 100%;">
-          <!-- <img src="your-anime-image.jpg" alt="Connect Image"> -->
+          <!-- <img src="images/your-anime-image.jpg" alt="Connect Image"> -->
           <div class="placeholder-text">[ ANIME / PORTRAIT IMAGE ]</div>
         </div>
       </div>
